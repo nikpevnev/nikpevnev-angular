@@ -1,0 +1,599 @@
+/* PAGES - SET UP */ 
+/*                 */
+
+  * {
+      margin: 0;
+      box-sizing: border-box;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      touch-action: auto;
+  }
+
+
+  .container .page {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      scroll-snap-align: start;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  button:active {
+    animation-play-state: paused;
+  }
+
+  .snap {
+    scroll-snap-align: start;
+  }
+
+  .bubble-wrap {
+      position: fixed;
+      top: 50%;
+      width: 30px;
+      height: 170px;
+      right: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      -webkit-touch-callout: none; 
+      -webkit-user-select: none; 
+      -khtml-user-select: none; 
+      -moz-user-select: none; 
+      -ms-user-select: none; 
+      user-select: none;
+      scrollbar-width: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    p {
+      overflow: hidden;
+      white-space: wrap;
+    }
+    
+    .bubble {
+      width: 20px;
+      height: 20px;
+      margin: 10px;
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      border-radius: 50%;
+      border: 0px;
+      background-color: rgba(86, 86, 86, 0.615);
+      
+    }
+
+    .bubble.bubOne {
+      background-color: rgba(34, 34, 34, 0.652);
+      border: 1px solid rgb(109, 109, 109);
+    }
+
+    .bubble.bubTwo {
+      background-color: rgba(44, 83, 255, 0.652);
+      border: 1px solid rgb(77, 122, 206);
+    }
+
+    .bubble.bubThree {
+      background-color: rgb(196, 223, 63);
+      border: 1px solid rgba(204, 220, 35, 0.863);
+    }
+
+    .bubble.bubFour {
+      background-color: rgba(138, 82, 244, 0.652);
+      border: 1px solid rgb(206, 173, 229);
+    }
+
+  /* PAGE 1 - SET UP */ 
+  /*                 */
+
+    h2 {
+      color: white; 
+      text-align: center;  
+      font-weight: 400; 
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none; /* removes underline */
+      cursor: pointer; /* makes it a pointer on hover */
+      user-select: none; /* prevent text selection */
+      -webkit-tap-highlight-color: transparent; /* prevents the element from being highlighted on tap in mobile devices */
+      background-color: rgb(227, 250, 109);
+  }
+
+  .footerlinks a:link , .footerlinks a:visited{
+    color: rgb(191, 191, 191); 
+    background-color: transparent; 
+    text-decoration: none;
+  } 
+
+  a:link , a:visited{
+      color: rgb(255, 255, 255); 
+      background-color: transparent; 
+      text-decoration: none;
+  } 
+
+
+
+  @keyframes bg-color {
+    0% {
+      background-color: rgb(74, 74, 74);
+    }
+    50% {
+      background-color: rgb(23, 23, 23);
+    }
+    100% {
+      background-color: rgb(95, 95, 95);
+    }
+  }
+
+  .bg-color {
+    background-color: rgb(99, 99, 99);
+    animation: bg-color 1.5s infinite;
+  }
+
+
+
+/*                 */
+
+
+
+/* PAGE 2 - SET UP */ 
+/*                 */
+
+  /* HEADING - SET UP */
+
+    .hr {
+      border-radius: 25px;
+      height: 10px;
+      float: left;
+      width: 5px;
+      animation-duration: 0.5s; 
+      animation-timing-function: ease-out; 
+      animation-delay: 0;
+      animation-direction: alternate;
+      animation-iteration-count: 1;
+      animation-play-state: paused;
+      animation-fill-mode: forwards;
+      transform-origin: 0% 50%; /* Add this line */
+      background-color: rgba(102, 102, 246, 0.871);
+    }
+    
+    .hr2  {
+      margin-left: 20px !important;
+      border-radius: 25px;
+      height: 10px !important;
+      min-width: 5px !important;
+      animation-duration: 0.5s; 
+      right: 0;
+      position: absolute;
+      animation-timing-function: ease-out; 
+      animation-delay: 0;
+      animation-direction: alternate;
+      animation-iteration-count: 1;
+      animation-play-state: paused;
+      animation-fill-mode: forwards;
+      transform-origin: 100% 50% !important; /* Adjust transform-origin to start from the right */
+      background-color: rgba(255, 166, 0, 0.634);
+    }
+    
+    .active {
+      animation-play-state: running; /* Change play state to running when .active class is added */
+    }
+    
+    .hrmove {
+      animation-name: stretch;
+    }
+    
+    .hrmove2 {
+      animation-name: stretch2;
+    }
+    
+    .hrmove3 {
+      animation-name: stretch3;
+    }
+    
+    .hr2move {
+      animation-name: slidein;
+      width: 5px;
+    }
+    
+    .hr2move2 {
+      animation-name: slidein2;
+      width: 5px;
+    }
+    
+    .hr2move3 {
+      animation-name: slidein3;
+      width: 5px;
+    }
+    
+    
+    @keyframes stretch {
+      0% {
+        width: 5px;
+      }
+      100% {
+        width: 12px;
+      }
+    }
+    
+    
+    @keyframes stretch2 {
+      0% {
+        width: 5px;
+      }
+    
+      100% {
+        width: 30px;
+      }
+    }
+    
+    @keyframes stretch3 {
+      0% {
+        width: 5px;
+      }
+    
+      100% {
+        width: 50px;
+      }
+    }
+    
+    @keyframes slidein {
+      0% {
+        width: 5px;
+      }
+      100% {
+        width: 50px;
+      }
+    }
+    
+    @keyframes slidein2 {
+      0% {
+        width: 5px;
+      }
+      100% {
+        width: 30px;
+      }
+    }
+    
+    @keyframes slidein3 {
+      0% {
+        width: 5px;
+      }
+      100% {
+        width: 12px;
+      }
+    }
+
+  /*                 */
+
+  /* ROW 1 - SET UP */
+
+    .circle {
+      border-radius: 100%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      -webkit-animation: spin-right 10s linear infinite;
+      animation: spin-right 10s linear infinite;
+    }
+
+    .circle2 {
+      width: 85%;
+      height: 85%;
+      border: 1px dashed rgb(86, 86, 86);
+      top: 50%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 100%;
+    }
+
+    .circle3 {
+      width: 30px;
+      height: 30px;
+      border: 1px dotted rgb(252, 217, 118);
+      top: 50%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 100%;
+      background-color: rgb(239, 255, 165);
+    }
+
+    .outer-circle {
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      border-radius: 100%;
+      border: 1px solid rgb(16, 105, 0);
+      background-color: rgba(157, 138, 255, 1);
+      top: 0.5%;
+    }
+
+
+    @keyframes spin-right {
+      100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+  .filler { 
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-image: repeating-linear-gradient(-45deg, 
+    transparent, /* the starting color */
+    rgba(102, 102, 246, 0.3) 25px, /* the ending color and the distance */
+    rgba(102, 102, 246, 0.3) 25px, /* the next color and the distance */
+     rgba(102, 102, 246, 0.3) 25px /* the next color and the distance */
+  );
+  }
+
+  
+  /*                 */
+  @media (hover: hover) {
+
+    .cloudPhoto:hover {
+      opacity: 0.7;
+    }
+  
+    .logisticsPhoto:hover {
+      opacity: 0.7;
+    }
+  
+    .newYorkPhoto:hover {
+      opacity: 0.7;
+    }
+  
+    .officePhoto:hover {
+      opacity: 0.7;
+    }
+  
+    .hoverEvent {
+      opacity: 0.7;
+    }
+  
+    .hoverText {
+      transform: translateY(-100%);
+    }
+  
+    .cloudPhotoText {
+      transition: margin-top 0.5s ease-out;
+      -webkit-transition: margin-top 0.5s ease-out;
+      -moz-transition: margin-top 0.5s ease-out;
+    }
+  
+    .cloudPhoto:hover + #cPText, #cPText:hover {
+      transform: translateY(-40%);
+    }
+  
+  
+    .logisticsPhoto {
+      transition: margin-top 2s ease-out;
+      -webkit-transition: margin-top 0.5s ease-out;
+      -moz-transition: margin-top 0.5s ease-out;
+    }
+  
+    .logisticsPhoto:hover + #lPText, #lPText:hover {
+      transform: translateY(-40%);
+    }
+  
+    .newYorkPhoto {
+      transition: margin-top 0.5s ease-out;
+      -webkit-transition: margin-top 0.5s ease-out;
+      -moz-transition: margin-top 0.5s ease-out;
+    }
+  
+    .newYorkPhoto:hover + #nPText, #nPText:hover {
+      transform: translateY(-40%);
+    }
+  
+    .officePhoto {
+      transition: margin-top 0.5s ease-out;
+      -webkit-transition: margin-top 0.5s ease-out;
+      -moz-transition: margin-top 0.5s ease-out;
+    }
+  
+    .officePhoto:hover + #oPText, #oPText:hover {
+      transform: translateY(-40%);
+    }
+  }
+
+
+  .userSelectDisabled {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+  }
+
+  @keyframes bg-color2 {
+    0% {
+      background-color: rgb(209, 246, 255);
+    }
+    50% {
+      background-color: rgb(225, 234, 246);
+    }
+    100% {
+      background-color: rgb(209, 246, 255);
+    }
+  }
+
+  .bg-color2 {
+    background-color: rgb(225, 234, 246);
+    animation: bg-color2 1.5s infinite;
+  }
+
+  /* FOOTER - SET UP */
+  
+    .circle {
+      width: 20%;
+      height: 20%;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 255, 0.5);
+      animation: pulse 3s ease-in-out infinite;
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 255, 0.5);
+    }
+    
+    @keyframes pulse {
+      0% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0.1;
+      }
+    }
+
+  /*                 */
+
+  /* PAGE 3 - SET UP */
+
+  .p3SB, .row2_p3 {
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  .p3SB {
+    border-radius: 5px;
+  }
+
+  .row1_p3 {
+    display: flex; 
+    flex-direction: row; 
+    width: 100%; 
+    margin-top: 10px; 
+    overflow: hidden; 
+    min-height: 50px; 
+    flex: 15; 
+    scroll-snap-type: x mandatory; 
+    overflow-x: scroll; 
+    -webkit-overflow-scrolling: touch; 
+    scroll-behavior: smooth; 
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+
+
+  /* Style the scrollbar for WebKit browsers */
+    .row1_p3::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    .row1_p3::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    .row1_p3::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    .activeP3 {
+      background-color: rgba(75, 153, 241, 0.8);
+    }
+  /*                 */
+
+  li {
+    padding-left: 5px;
+    list-style-type:disc;
+    list-style-position:inside;
+  }
+
+  @keyframes bg-color3 {
+    0% {
+      background-color: rgba(238, 223, 164, 0.3);
+    }
+    50% {
+      background-color: rgba(217, 234, 184, 0.3);
+    }
+    100% {
+      background-color: rgba(238, 223, 164, 0.3);
+    }
+  }
+
+  .bg-color3 {
+    background-color: rgba(238, 223, 164, 0.3);
+    animation: bg-color3 1.5s infinite;
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Modal Content */
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  max-width: 200px;
+}
+.signUp {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes bg-color4 {
+  0% {
+    background-color: rgba(212, 164, 238, 0.6);
+  }
+  50% {
+    background-color: rgba(216, 184, 234, 0.3);
+  }
+  100% {
+    background-color: rgba(212, 164, 238, 0.6);
+  }
+}
+
+.bg-color4 {
+  background-color: rgba(212, 164, 238, 0.6);
+  animation: bg-color4 1.5s infinite;
+}
+
+/*                 */

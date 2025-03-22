@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    background-color: rgb(228, 241, 255);
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #515151;
+    display: block;
+  }
+
+  .sidenav {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    border: 1px solid black;
+    transition: 0.2s linear;
+  }
+  
+  .sidenavBack {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #70707083;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in;
+    opacity: 0; /* Add initial opacity */
+  }
+
+  .sidenavBack.active {
+    width: 100%; /* Add the desired width when active */
+    opacity: 1; /* Set opacity to 1 when active */
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    left: 255px;
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    transition: 0.8s linear;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+
+  @keyframes anime {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+  #top {
+    border-bottom: none;
+    background-color: rgb(39, 6, 86);
+    border-bottom: 2px solid rgb(160, 160, 160);
+  }
+
+  :host {
+    height: 100%;
+    overflow: auto;
+  }
+
+  .tag {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .tagArea {
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
+  .scrollArea::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollArea {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .frontItems::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .frontItems {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .frontItemsArea {
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }

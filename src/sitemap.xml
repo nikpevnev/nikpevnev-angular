@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.nikpevnev.com/</loc>
+    <lastmod>2023-03-28T09:30:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.nikpevnev.com/product</loc>
+    <lastmod>2023-03-27T15:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.nikpevnev.com/store</loc>
+    <lastmod>2023-03-26T11:45:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>

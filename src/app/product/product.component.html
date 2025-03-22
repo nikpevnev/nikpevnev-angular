@@ -1,0 +1,618 @@
+<div #cont class="container" [ngStyle]="{'height.px': windowHeight }" style="overflow-y: scroll; scroll-snap-type: y mandatory;" (scroll)="scrollHandler($event)">
+
+    <div #page1 class="page1 page" style="background-color: rgb(31, 31, 31);">
+        
+        <div #wrapper class="wrapper" [ngStyle]="{'width': pageWidth, 'height.px': windowHeight}" style="text-align: center; margin: 0 auto; display: flex; flex-direction: column;">
+            
+
+            <!--         -->
+            <!-- HEADING -->
+            <!--         -->
+
+            <div #heading class="heading" [ngStyle]="{'font-size': fontSizeHeader }" style=" width: 95%; margin: 0 auto; position: relative; margin-top: 10px; overflow: hidden; padding-bottom: 10px;">           
+                <h1 style="text-align: center; color: white; font-weight: 400; max-width: 80%; margin: 0 auto;  z-index: 0; position: relative;">American Museum <i style="font-weight: 100;">of</i> Natural History</h1>
+                <h3 style="text-align: center; color: white; font-weight: 200; max-width: 80%; margin: 0 auto; z-index: 0; position: relative;">Exhibitions</h3>
+            </div>
+
+            
+            <!--         -->
+            <!--  ROW 1  -->
+            <!--         -->
+
+            <div class="row1 row" style="border-top: 3px solid rgb(42, 42, 42); display: flex; flex-direction: row; margin-bottom: 20px;">
+                <div class="section1" style="display: flex; flex-direction: column; padding-right: 5px; padding-top: 10px; min-width: 150px; min-height: 125px;">
+                    <h2 [ngStyle]="{'font-size': fontSize1 }" style=" padding-bottom: 13px; overflow: hidden;">Tyrannosaurus rex</h2>
+                    <div class="bg-color" #trexArea style="display: flex; flex-direction: row; height: 100%; flex: 1; min-height: 100px; min-width: 100px; align-items: center; justify-content: end; border-radius: 5px;">
+                        <img #trex (click)="link('https://www.amnh.org/exhibitions/permanent/saurischian-dinosaurs/tyrannosaurus-rex');" style="height: 100%; border-radius: 10px; margin: 0 auto; max-height: 150px; object-fit: contain; cursor: pointer;" [src]="trexURL" alt=""  (load)="trexArea.classList.remove('bg-color')">
+                    </div>
+                </div>
+                <div class="section2" style="color: white; text-align: left; display: flex; flex-direction: column; padding-top: 5px; margin-left: 10px; margin-right: 5px;">
+                    <div style="height: 5px; width: 3px; "></div>
+                    <h3 [ngStyle]="{'font-size': fontSize1 }" style="text-align: left; font-weight: 200;"><span style="background-color: rgb(86, 5, 5); border-radius: 5px; padding-right: 5px; padding-left: 5px;">4th Floor</span></h3>
+                    <p [ngStyle]="{'font-size': fontSize1, 'display': displayFlagMobile }" style="font-weight: 200; text-align: left; margin-top: 15px; color: rgb(198, 198, 198);">The 4-foot-long jaw. The 6-inch-long teeth. The tiny arms</p>
+                    <p [ngStyle]="{'font-size': fontSize2 }" style="font-weight: 200; text-align: left; margin-top: 10px; font-style: italic; color: rgb(235, 235, 235); padding-bottom: 10px;">Almost everything about Trex indicates the enormous power of one of the largest theropod dinosaurs <span *ngIf="windowWidth > 400">that ever existed</span></p>
+                    <!-- <p [ngStyle]="{'display': displayFlagMobile }"  style="font-weight: 200; text-align: left; margin-top: 15px; font-size: 19px;">The first skeleton of Tyrannosaurus rex was discovered in 1902 in Hell Creek, Montana, by the Museum's famous fossil hunter Barnum Brown. Six years later, Brown discovered a nearly complete T. rex skeleton at Big Dry Creek, Montana.</p> -->
+                </div>
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 5px !important;">
+                    <div style="width: 100%; height: 50%; border-right: 5px solid rgb(42, 42, 42);"></div>
+                    <div style="width: 100%; height: 50%; border-right: 5px solid rgb(69, 69, 69);"></div>
+                </div>
+            </div>
+
+
+            <!--         -->
+            <!--  ROW 2  -->
+            <!--         -->
+
+            <div class="row2 row" [ngStyle]="{'display': displayFlagMini }" style="border-top: 3px solid rgb(69, 69, 69); display: flex; flex-direction: row; margin-bottom: 10px; margin-bottom: 20px;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 5px !important; margin-right: 5px; max-width: 5px !important; ">
+                    <div style="width: 100%; height: 50%; border-left: 5px solid rgb(69, 69, 69);"></div>
+                    <div style="width: 100%; height: 50%; border-left: 5px solid rgb(42, 42, 42);"></div>
+                </div>
+                <div class="section2" style="color: white; text-align: left; display: flex; flex-direction: column; padding-right: 10px; padding-top: 5px; padding-left: 5px; padding-right: 5px;">
+                    <div style="height: 5px; width: 3px; "></div>
+                    <h3 [ngStyle]="{'font-size': fontSize1 }" style="text-align: left; font-weight: 200;"><span style="background-color: rgb(152, 225, 163); border-radius: 5px; padding-right: 5px; padding-left: 5px; color: black;">3rd Floor</span></h3>
+                    <p [ngStyle]="{'font-size': fontSize2}" style="font-weight: 200; text-align: left; margin-top: 10px; color: rgb(235, 235, 235); font-style: italic; overflow: hidden;  padding-bottom: 10px;">Rapa Nui is famous for its moai rows, towering figures of ancestors that were carved from volcanic tuff rock in quarries, then moved to a platform on the water's edge</p>
+                    <!-- <p [ngStyle]="{'display': displayFlagMobile }" style="font-weight: 200; text-align: left; margin-top: 15px; font-size: 19px;">There are 887 moai on Rapa Nui, where they are revered, even considered by some islanders to be sacred. Since the Museum's moai cast was featured in the movie Night at the Museum.</p> -->
+                </div>
+                <div class="section3" style="display: flex; flex-direction: column; float: right; padding-top: 10px; min-width: 100px; ">
+                    <h2 [ngStyle]="{'font-size': fontSize1 }" style=" padding-bottom: 10px; overflow: hidden;">Rapa Nui</h2>
+                    <div class="bg-color" #rapanuiArea style="display: flex; flex-direction: row; height: 100%; flex: 1; min-height: 100px; min-width: 100px; align-items: center; justify-content: end; border-radius: 5px;">
+                        <img #rapanui (click)="link('https://www.amnh.org/exhibitions/permanent/pacific-peoples/easter-island-moai-cast');" style="border-radius: 10px; float: right; margin-left: 50px; margin: 0 auto; height: 100%;  max-height: 150px; object-fit: contain;cursor: pointer; " [src]="rapanuiURL" alt=""  (load)="rapanuiArea.classList.remove('bg-color')">
+                    </div>
+                </div>
+            </div>
+
+            <!--         -->
+            <!--  ROW 3  -->
+            <!--         -->
+
+            <div class="row3 row" [ngStyle]="{'display': displayThirdRow }" style="border-top: 3px solid rgb(42, 42, 42); flex-direction: row; display: flex; width: 100%; margin-bottom: 10px; margin-bottom: 20px;">
+                <div class="section1" style="display: flex; flex-direction: column;min-width: 250px; padding-top: 10px; margin-right: 25px;">
+                    <h2 [ngStyle]="{'font-size': fontSize1 }" style="border: 1px solid transparent; padding-bottom: 10px; overflow: hidden;">Blue Whale</h2>
+                    <div class="bg-color" #whaleArea style="display: flex; flex-direction: row; height: 100%; flex: 1; min-height: 125px; min-width: 125px; align-items: center; justify-content: end; border-radius: 5px;">
+                        <img #whale (click)="link('https://www.amnh.org/exhibitions/permanent/ocean-life/blue-whale-model');" style="border-radius: 10px; height: 100%;  max-height: 150px; object-fit: contain; cursor: pointer;" [src]="whaleURL" alt=""  (load)="whaleArea.classList.remove('bg-color')">
+                    </div>
+                </div>
+               <div class="section2" style="color: white; text-align: left;  display: flex; flex-direction: column; padding-top: 5px;">
+                    <div style="height: 5px; width: 3px;"></div>
+                    <h3 [ngStyle]="{'font-size': fontSize1 }" style="text-align: left; font-weight: 200;"><span style="background-color: rgb(121, 195, 255); border-radius: 5px; padding-right: 5px; padding-left: 5px; color: black;">1st Floor</span></h3>
+                    <p [ngStyle]="{'font-size': fontSize1, 'display': displayFlag }" style="font-weight: 200; text-align: left; margin-top: 15px; color: rgb(198, 198, 198);">It's the largest animal on Earth</p>
+                    <p [ngStyle]="{'font-size': fontSize2, 'display': displayThirdRow  }" style="font-weight: 200; text-align: left; margin-top: 10px; font-style: italic; color: rgb(235, 235, 235);">In fact, the blue whale is the biggest animal ever known to have existed. It's even bigger than the enormous dinosaurs that lived over 65 million years ago</p>
+                    <!-- <p [ngStyle]="{'display': displayFlag }"  style="font-weight: 200; text-align: left; margin-top: 15px; font-size: 19px;">This colossal species uses plates of baleen in its mouth to filter huge numbers of tiny prey, including small crustaceans called krill.</p> -->
+                </div>
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 5px !important; margin-left: 5px;">
+                        <div style="width: 100%; height: 50%; border-right: 5px solid rgb(42, 42, 42);"></div>
+                        <div style="width: 100%; height: 50%; border-right: 5px solid rgb(69, 69, 69);"></div>
+                </div>
+            </div>
+
+
+            <!--         -->
+            <!--  ROW 4  -->
+            <!--         -->
+
+            <div class="row4 row" [ngStyle]="{'display': displayFourthRow }" style="border-top: 3px solid rgb(69, 69, 69); display: flex; flex-direction: row; margin-bottom: 20px;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 5px !important; margin-right: 5px; max-width: 5px !important; ">
+                    <div style="width: 100%; height: 50%; border-left: 5px solid rgb(69, 69, 69);"></div>
+                    <div style="width: 100%; height: 50%; border-left: 5px solid rgb(42, 42, 42);"></div>
+                </div>
+                <div class="section2" style="color: white; text-align: left; display: flex; flex-direction: column; padding-right: 10px; padding-top: 5px; padding-left: 5px; padding-right: 5px;">
+                    <div style="height: 5px; width: 3px; "></div>
+                    <h3 [ngStyle]="{'font-size': fontSize1 }" style="text-align: left; font-weight: 200;"><span style="background-color: rgb(63, 63, 63); border-radius: 5px; padding-right: 5px; padding-left: 5px; color: rgb(255, 255, 255);">Lower Level</span></h3>
+                    <p [ngStyle]="{'font-size': fontSize2}" style="font-weight: 200; text-align: left; margin-top: 10px; color: rgb(235, 235, 235); font-style: italic; overflow: hidden;  padding-bottom: 10px;">The Willamette Meteorite weighs 15.5 tons. This iron meteorite, which was found in Oregon, is the largest ever found in the United States and the sixth-largest in the world</p>
+                    <!-- <p [ngStyle]="{'display': displayFlagMobile }" style="font-weight: 200; text-align: left; margin-top: 15px; font-size: 19px;">There are 887 moai on Rapa Nui, where they are revered, even considered by some islanders to be sacred. Since the Museum's moai cast was featured in the movie Night at the Museum.</p> -->
+                </div>
+                <div class="section3" style="display: flex; flex-direction: column; float: right; padding-top: 10px; min-width: 150px; ">
+                    <h2 [ngStyle]="{'font-size': fontSize1 }" style=" padding-bottom: 10px; overflow: hidden;">Meteorite</h2>
+                    <div class="bg-color" #metArea style="display: flex; flex-direction: row; height: 100%; flex: 1; min-height: 125px; min-width: 125px; align-items: center; justify-content: end; border-radius: 5px;">
+                        <img #met (click)="link('https://www.amnh.org/exhibitions/permanent/the-universe/planets/planetary-impacts/willamette-meteorite');" style="border-radius: 10px; float: right; margin-left: 50px; margin: 0 auto;  height: 100%;  max-height: 150px; object-fit: contain;cursor: pointer;" [src]="metURL" alt=""  (load)="metArea.classList.remove('bg-color')">
+                    </div>
+                </div>
+            </div>
+
+
+            <!--         -->
+            <!--  ROW 5  -->
+            <!--         -->
+
+            <div class="row5 row" style="color: white; border-top: 1px solid rgb(42, 42, 42); flex-direction: row; display: flex; width: 100%; flex-grow: 1; border-bottom: 1px solid rgb(69, 69, 69); ">
+                <div class="section1" style="display: flex; flex-direction: column; min-width: 250px; padding-top: 10px; margin: 0 auto; padding-bottom: 15px; text-align: center; align-items: center; justify-content: center; overflow: hidden; min-height: 50px;">
+                    <p style="font-size: 18px; overflow: hidden; padding-bottom: 5px; min-height: 30px;"> Open daily, 10 am–5:30 pm</p>
+                    <p style="font-size: 18px; padding-top: 5px; overflow: hidden; padding-bottom: 5px;" *ngIf="windowWidth > 500 && windowHeight > 400">NY, NJ, or CT Residents Pay-What-You-Wish</p>
+                </div>
+            </div>
+
+            
+            <!--         -->
+            <!--  FOOTER -->
+            <!--         -->
+
+            <div #footer class="footer"  style="display: flex; flex-direction: row; margin-bottom: 25px; margin-top: 8px; ">
+                <div class="section1" style="display: flex; flex-direction: column; padding-top: 10px; " *ngIf="windowHeight > 400">
+                    <svg (click)="link('https://goo.gl/maps/mjfZ27y6ujmT1i6GA')" xmlns="http://www.w3.org/2000/svg" style="height: 75px; width: 75px; margin-right: 10px; cursor: pointer;">
+                        <rect x="0" y="23" width="75" height="35" fill="grey" stroke="black" stroke-width="1" transform="translate(0,-5)"/> <!-- front rectangle overflowing by 5px -->
+                        <rect x="10" y="5" width="55" height="48" fill="lightgrey" stroke="black" stroke-width="1"/> <!-- background rectangle -->
+                        <text x="37.5" y="32" text-anchor="middle" font-style="italic" dominant-baseline="middle">amnh</text> <!-- text inside rectangle -->
+                    </svg>
+                </div>
+                <div class="section2" style="display: flex; flex-direction: column; flex-grow: 1; padding-top: 10px; " *ngIf="windowHeight > 400">
+                    <div class="imageText" style="color: rgb(227, 227, 227); font-size: 15px; margin-right: 10px; text-align: left;" *ngIf="windowWidth>405">
+                        <a href="https://goo.gl/maps/mjfZ27y6ujmT1i6GA" style="color: rgb(227, 227, 227);" target="_blank"><p>200 Central Park West</p>
+                        <p>New York, NY 10024</p></a> 
+                        <p style="padding-top: 2px;">Phone: 212-769-5100</p>
+                    </div>
+                </div>
+                <div class="section3 footerlinks" style="display: flex; flex-direction: column; color: rgb(212, 212, 212); flex-grow: 1; font-weight: 500;">
+                    <div style="margin: left auto; font-size: 13px; overflow: hidden; align-items: center; display: flex; flex-direction: column;">
+                        <a href="https://www.amnh.org/about/contact/contact-us-form?_gl=1*unqj63*_gcl_aw*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_gcl_dc*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_ga*ODEwNzk3MzgyLjE2ODIwMDEzOTI.*_ga_HS7PJLLHNH*MTY4MjM3MDU0Mi45LjEuMTY4MjM3MDc5OC4wLjAuMA..&_ga=2.53698088.1075455621.1682370542-810797382.1682001392&_gac=1.124538360.1682370799.CjwKCAjw0ZiiBhBKEiwA4PT9z-VDurOs86Gn8N9j9amXxpiB4eUfqwQjH_HthZ8WtFEQCV00FJvj9hoCaloQAvD_BwE" style="margin: 0 auto; " target="_blank">
+                            <div style="display: flex; flex-direction: row; flex-grow: 1; padding: 5px; cursor: pointer;">
+                                CONTACT US
+                            </div>
+                        </a>
+                        <a  *ngIf="windowHeight > 400" href="https://www.amnh.org/plan-your-visit/accessibility-language-assistance?_gl=1*cma2jj*_gcl_aw*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_gcl_dc*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_ga*ODEwNzk3MzgyLjE2ODIwMDEzOTI.*_ga_HS7PJLLHNH*MTY4MjM3MDU0Mi45LjEuMTY4MjM3MjMxNy4wLjAuMA..&_ga=2.130765199.1075455621.1682370542-810797382.1682001392&_gac=1.121300602.1682370799.CjwKCAjw0ZiiBhBKEiwA4PT9z-VDurOs86Gn8N9j9amXxpiB4eUfqwQjH_HthZ8WtFEQCV00FJvj9hoCaloQAvD_BwE" style="margin: 0 auto; " target="_blank">
+                            <div style="display: flex; flex-direction: row; flex-grow: 1; padding: 5px; cursor: pointer;">
+                                ACCESSIBILITY
+                            </div>
+                        </a>
+                        <a  *ngIf="windowHeight > 400" href="https://www.amnh.org/plan-your-visit?_gl=1*cma2jj*_gcl_aw*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_gcl_dc*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_ga*ODEwNzk3MzgyLjE2ODIwMDEzOTI.*_ga_HS7PJLLHNH*MTY4MjM3MDU0Mi45LjEuMTY4MjM3MjMxNy4wLjAuMA..&_ga=2.130765199.1075455621.1682370542-810797382.1682001392&_gac=1.121300602.1682370799.CjwKCAjw0ZiiBhBKEiwA4PT9z-VDurOs86Gn8N9j9amXxpiB4eUfqwQjH_HthZ8WtFEQCV00FJvj9hoCaloQAvD_BwE" style="margin: 0 auto; " target="_blank">
+                            <div style="display: flex; flex-direction: row; flex-grow: 1; padding: 5px; cursor: pointer;">
+                                VISITOR INFO
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section4 footerlinks" [ngStyle]="{'display': displayFlagFooter }" style="display: flex; flex-direction: column; color: rgb(212, 212, 212);  flex-grow: 1;">
+                    <div style="margin: 0 auto; font-size: 13px; overflow: hidden; align-items: center; display: flex; flex-direction: column;">
+                        <a href="https://www.citypass.com/new-york?mv_source=americanmuseumofnh&campaign=footer-cart" style="margin: 0 auto; " target="_blank">
+                            <div style="display: flex; flex-direction: row; flex-grow: 1; padding: 5px; cursor: pointer;">
+                                CITYPASS
+                            </div>
+                        </a>
+                        <a  *ngIf="windowHeight > 400" href="https://shop.amnh.org/?_gl=1*rneqqj*_gcl_aw*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_gcl_dc*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_ga*ODEwNzk3MzgyLjE2ODIwMDEzOTI.*_ga_HS7PJLLHNH*MTY4MjM3MDU0Mi45LjEuMTY4MjM3MjM4My4wLjAuMA.." style="margin: 0 auto; " target="_blank">
+                            <div style="display: flex; flex-direction: row; flex-grow: 1; padding: 5px; cursor: pointer;">
+                                SHOPS
+                            </div>
+                        </a>
+                        <a  *ngIf="windowHeight > 400" href="https://www.amnh.org/about/gilder-center?_gl=1*rneqqj*_gcl_aw*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_gcl_dc*R0NMLjE2ODIzNzA3OTkuQ2p3S0NBancwWmlpQmhCS0Vpd0E0UFQ5ei1WRHVyT3M4NkduOE45ajlhbVh4cGlCNGVVZnF3UWpIX0h0aFo4V3RGRVFDVjAwRkp2ajlob0NhbG9RQXZEX0J3RQ..*_ga*ODEwNzk3MzgyLjE2ODIwMDEzOTI.*_ga_HS7PJLLHNH*MTY4MjM3MDU0Mi45LjEuMTY4MjM3MjM4My4wLjAuMA..&_ga=2.132210190.1075455621.1682370542-810797382.1682001392&_gac=1.215089765.1682370799.CjwKCAjw0ZiiBhBKEiwA4PT9z-VDurOs86Gn8N9j9amXxpiB4eUfqwQjH_HthZ8WtFEQCV00FJvj9hoCaloQAvD_BwE" style="margin: 0 auto;" target="_blank">
+                            <div style="display: flex; flex-direction: row; flex-grow: 1; padding: 5px; cursor: pointer;">
+                                THE GILDER CENTER
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div #page2 id="page2" class="page2" [ngStyle]="{'height.px': windowHeight }" style="background-color: rgb(186, 218, 251); display: flex; flex-direction: column; font-family: 'Times New Roman', Times, serif;">
+
+        <div #wrapper class="wrapper" [ngStyle]="{'height.px': windowHeight, 'width': pageWidth }" style="text-align: center; margin: 0 auto; display: flex; flex-direction: column;">
+
+            <!--         -->
+            <!-- HEADING -->
+            <!--         -->
+
+                <div #heading class="heading" [ngStyle]="{'font-size': fontSizeHeaderPage2 }" style=" width: 100%; margin: 0 auto; position: relative; margin-top: 10px; overflow: hidden;  display: flex; flex-direction: row; align-items: center; justify-content: center;">           
+                    <div #logo style="display: flex; flex-direction: column; align-items: start; width: 100px !important;">
+                        <div class="logoContainer" style="margin-right: 10px; padding-top: 5px; width: 70px; position: relative;">                                
+                            <div style="margin-bottom: 5px; display: flex; flex-direction: row;">
+                                <div class="hrmove hr" id="1"></div><div id="4" class="hr2move hr2"></div>
+                            </div>
+                            <div style="margin-bottom: 5px; display: flex; flex-direction: row;">
+                                <div class="hrmove2 hr" id="2"></div><div id="5" class="hr2move2 hr2"></div>
+                            </div>
+                            <div style="margin-bottom: 5px; display: flex; flex-direction: row;">
+                                <div class="hrmove3 hr" id="3"></div><div id="6" class="hr2move3 hr2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 [ngStyle]="{'font-size': fontSizeHeaderPage2 }" style="color: white; font-weight: 600; margin: 0 auto;  position: relative; color: rgb(54, 54, 54);  display: flex; flex-direction: column; text-align: left; width: 100%; margin-left: 10px;">OTIZ CONSULTING</h1>
+                </div>
+
+
+            <!--         -->
+            <!--  ROW 1  -->
+            <!--         -->
+                
+                <div class="row1_p2" style="display: flex; flex-direction: row; margin-bottom: 5px; width: 100%; margin-top: 10px; flex-wrap: wrap; overflow: hidden; min-height: 50px;">
+                    <div class="section2" style="color: white; text-align: left; display: flex; flex-direction: column; padding-top: 5px; color: black; flex: 8; ">
+                        <div style="display: flex; justify-content: space-between; font-family: 'Times New Roman', Times, serif; font-size: 24px; padding-bottom: 5px; margin-top: auto; ">
+                            <p [ngStyle]="{'font-size': fontSizeText }" >Otiz Consulting <span *ngIf="!(windowWidth < 1100 && windowHeight < 450)">is a consulting firm that </span>offers business and IT consulting services<span *ngIf="windowWidth > 716 && windowHeight > 450">. Our goal is to help our clients achieve strategic and operational excellence across all domains</span><span *ngIf="windowWidth > 1450 && windowHeight > 450">. We offer tailored solutions to meet the specific needs of our clients</span><span *ngIf="windowWidth > 1780">. We deliver tangible results through project management and data analytics</span> </p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; flex: 1; min-width: 2px !important; max-height: 2px !important;">
+                            <div style="width: 34%; height: 100%; border-bottom: 2px solid rgba(192, 153, 54, 0.788);"></div>
+                            <div style="width: 34%; height: 100%; border-bottom: 2px solid rgba(114, 137, 210, 0.875);"></div>
+                            <div style="width: 34%; height: 100%; border-bottom: 2px solid rgba(113, 176, 118, 0.637);"></div>
+                        </div>
+                    </div>
+                    <div class="section3" *ngIf="windowWidth > 800"  style="color: white; text-align: left; display: flex; flex-direction: column; padding-top: 5px; margin-left: 20px; color: black; width: auto; flex: 1;">
+                        <div class="filler" style=" width: 100%; height: 100%;"><span style="padding: 3px; background: rgba(255, 255, 255, 0.5); border-radius: 5px; z-index: 3; font-weight: bold;">RESULTS</span></div>
+                    </div>
+                </div>
+                
+
+            <!--         -->
+            <!--  ROW 2  -->
+            <!--         -->
+
+                <div class="row2_p2" [ngStyle]="{'display': displayFlagPage2Row2 }" style="display: flex; flex-direction: row; width: 100%; margin-top: -15px; justify-content: center;">
+                    <div class="section1" style="display: flex; flex-direction: column; flex: 1; align-items: end; ">
+                        <div class="chartSpace" style="max-width: 350px; height: 100%; display: flex; flex-direction: row; align-items: center;">
+                            <div id="pieChart"  class="pieChart" style="flex: 1; height: 70%; display: flex; flex-direction: column; max-width: 250px; justify-content: start; align-items: start;" >
+                                <apx-chart #pie style="overflow: hidden; padding-top: 3px;"
+                                    [series]="chartOptionsPie.series"
+                                    [chart]="chartOptionsPie.chart"
+                                    [xaxis]="chartOptionsPie.xaxis"
+                                    [yaxis]="chartOptionsPie.yaxis"
+                                    [tooltip]="chartOptionsPie.tooltip"
+                                    [dataLabels]="chartOptionsPie.dataLabels"
+                                    [colors]="chartOptionsPie.colors"
+                                    [legend]="chartOptionsPie.legend"
+                                    [stroke]="chartOptionsPie.stroke"
+                                    [plotOptions]="chartOptionsPie.plotOptions"
+                                ></apx-chart>
+                            </div>
+                            <div class="lines" style="flex: 1; height: 100%; display: flex; flex-direction: column; border-top-right-radius: 15px; border-bottom-right-radius: 15px; align-items: center; justify-content: center; max-width: 150px;">
+                                <apx-chart style="overflow: hidden;"
+                                    [series]="chartOptions.series"
+                                    [chart]="chartOptions.chart"
+                                    [xaxis]="chartOptions.xaxis"
+                                    [yaxis]="chartOptions.yaxis"
+                                    [tooltip]="chartOptions.tooltip"
+                                    [dataLabels]="chartOptions.dataLabels"
+                                    [colors]="chartOptions.colors"
+                                    [legend]="chartOptions.legend"
+                                ></apx-chart>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section2" [ngStyle]="{'font-size': fontSizeRow2 }" style="display: flex; flex-direction: column; padding-top: 0px; font-weight: 300; margin-left: 5px; height: 100%; justify-content: center; align-items: start; flex: 1; padding-left: 3vw;">
+                        <div  style="max-width: 350px; display: flex; flex-direction: column;">
+                            <div style="display: flex; justify-content: space-between; flex-direction: row; padding: 5px; border-bottom: 2px solid rgba(152, 38, 38, 0.6); justify-content: center; flex: 1; align-items: center; overflow: hidden; padding-bottom: 7px; padding-top: 7px;">
+                                Precise Analysis
+                             </div>
+                             <div style="display: flex; justify-content: space-between; flex-direction: row; padding: 5px; border-bottom: 2px solid rgba(152, 38, 38, 0.6); justify-content: center; flex: 1; align-items: center; position: relative; padding: 0px; overflow: hidden; padding-bottom: 7px; padding-top: 7px;">
+                                <div style="height: 5px; width: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;  background-color: rgba(152, 38, 38, 0.6); position: absolute; top: 0;"></div>
+                                Fast Process
+                             </div>
+                             <div style="display: flex; justify-content: space-between; flex-direction: row; padding: 5px; justify-content: center; flex: 1; align-items: center; position: relative; padding: 0px; overflow: hidden; padding-bottom: 7px; padding-top: 7px;">
+                                <div style="height: 5px; width: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;  background-color: rgba(152, 38, 38, 0.6); position: absolute; top: 0;"></div>
+                                Valuable Output
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!--         -->
+            <!--  ROW 3  -->
+            <!--         -->
+
+                <div class="row3_p2" [ngStyle]="{'margin-top': page2row3mT }" style="display: flex; flex-direction: row; width: 100%;">
+                    <div style="display: flex; flex-direction: column; width: 100%;" [ngStyle]="{'font-size': fontSizeRow3 }">
+                        <div  class="section1" style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center; font-weight: 500; flex: 0.2; padding-bottom: 3px;">
+                            <p>Team Leadership</p>
+                        </div>
+                        <div class="section2" style="display: flex; flex-direction: row; flex: 1; align-items: center; width: 100%; justify-content: center; align-items: center; min-height: 100px; height: 100%; ">
+                            <div style="display: flex; flex-direction: column; flex: 1; height: 100%; align-items: center;">
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 3; padding: 2px;">
+                                    <img #nbPhoto class="bg-color2" style="width: 100%; height: 100%; border-radius: 10px; margin: 0 auto; max-height: 150px; object-fit: contain; cursor: pointer; min-height: 75px; min-width: 75px; max-width: 150px;" [src]="NinaBrooksURL" alt=""  (load)="nbPhoto.classList.remove('bg-color2')">
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; align-items: center; justify-content: center; ">
+                                    Nina Brooks
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; font-weight: 600; padding-bottom: 3px; align-items: center; justify-content: center; ">
+                                    CEO
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; font-weight: 500; text-align: center; align-items: center; justify-content: center; overflow: hidden; padding-bottom: 5px;">
+                                    <span *ngIf="windowWidth > 500" style="margin-top: 5px; background-color: transparent; text-align: center; border-radius: 5px; border-top: 2px solid rgb(226, 119, 226); padding: 1px; padding-left: 3px; padding-right: 3px; margin-right: 5px;">Technology</span> <span style="margin-top: 5px; background-color: transparent; text-align: center; border-radius: 5px; border-top: 2px solid rgb(226, 119, 226); padding: 1px; padding-left: 3px; padding-right: 3px;">Strategy</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; flex: 1; height: 100%; align-items: center; ">
+                                <div style="display: flex; flex-direction: row;  height: 100%; flex: 2.6; padding: 2px; ">
+                                    <img  #acPhoto class="bg-color2" style="width: 100%; height: 100%; border-radius: 10px; margin: 0 auto; max-height: 150px; object-fit: contain; cursor: pointer; min-height: 75px; min-width: 75px; max-width: 150px;" [src]="AshleyCoombesURL" alt=""  (load)="acPhoto.classList.remove('bg-color2')">
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; align-items: center; justify-content: center; ">
+                                    Ash Coombes
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%;  flex: 1; font-weight: 600; align-items: center; justify-content: center; ">
+                                    President
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; font-weight: 500; text-align: center; align-items: center; justify-content: center; overflow: hidden;">
+                                    <span style="margin-top: 3px; background-color: transparent; text-align: center; border-radius: 5px; border-top: 2px solid rgb(119, 156, 226); padding: 1px; padding-left: 3px; padding-right: 3px;">Clients</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; flex: 1; height: 100%; align-items: center;">
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 3; padding: 2px;">
+                                    <img #sgPhoto class="bg-color2" style="width: 100%; height: 100%; border-radius: 10px; margin: 0 auto; max-height: 150px; object-fit: contain; cursor: pointer; min-height: 75px; min-width: 75px; max-width: 150px;" [src]="SteveGlassURL" alt=""  (load)="sgPhoto.classList.remove('bg-color2')">
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; align-items: center; justify-content: center;">
+                                    Steve Glass
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; font-weight: 600;  padding-bottom: 3px; align-items: center; justify-content: center;">
+                                    VP
+                                </div>
+                                <div style="display: flex; flex-direction: row; height: 100%; flex: 1; font-weight: 500; text-align: center; align-items: center; justify-content: center; overflow: hidden; padding-bottom: 5px;">
+                                    <span style="margin-top: 5px; background-color: transparent; text-align: center; border-radius: 5px; border-top: 2px solid rgb(226, 199, 119); padding: 1px; padding-left: 3px; padding-right: 3px;">Operations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            <!--         -->
+            <!--  ROW 4  -->
+            <!--         -->
+
+                <div class="row4_p2"  *ngIf="windowWidth > 400 && windowHeight > 600" style="display: flex; flex-direction: row; width: 100%; height: 100%; flex: 1; margin-top: 20px; margin-bottom: 10px;">
+                    <div  class="section1" style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; width: 100%; height: 100%;">
+                        <div *ngIf="windowHeight > 725"  class="block1"  style="display: flex; flex-direction: row; align-items: center; justify-content: center; flex: 1; width: 100%; ">
+                            <div [ngStyle]="{'border-bottom-left-radius': windowWidth > 450 ? '0px' : '10px'}" style="position: relative; width: 100%; height: 100%;  border-top-left-radius: 10px; overflow: hidden;">
+                                <img (click)="link('https://www.technologyreview.com/2023/03/25/1070275/chatgpt-revolutionize-economy-decide-what-looks-like/');" id="cloudPhoto" #cloudPhoto class="bg-color2 cloudPhoto userSelectDisabled" style="width: 100%; height: 100%; margin: 0 auto; object-fit: cover; cursor: pointer;" [src]="CloudURL" alt=""  (load)="cloudPhoto.classList.remove('bg-color2')">
+                                <div [ngStyle]="{'font-size': imgTextSize }" (click)="link('https://www.technologyreview.com/2023/03/25/1070275/chatgpt-revolutionize-economy-decide-what-looks-like/');" id="cPText" (mouseenter)="onMouseEnter('cP')" (mouseleave)="onMouseLeave('cP')" class="cloudPhotoText userSelectDisabled" style="position: absolute; bottom: 0; left: 0; padding: 2px; color: black; background-color: rgba(240, 248, 255, 0.659); margin-bottom: 10px; margin-left: 10px; border-radius: 10px; cursor: pointer; max-width: 75%; text-align: left;">ChatGPT is to revolutionize the economy</div>
+                            </div>
+                        </div>
+                        <div *ngIf="windowWidth > 450 && windowHeight > 825" class="block2" style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center; flex: 1; width: 100%;">
+                            <div style="position: relative; width: 100%; height: 100%; border-bottom-left-radius: 10px; overflow: hidden;">
+                                <img (click)="link('https://hbr.org/1977/11/logistics-essential-to-strategy');" id="logisticsPhoto" class="bg-color2 logisticsPhoto userSelectDisabled" #logisticsPhoto style="width: 100%; height: 100%; margin: 0 auto; object-fit: cover; cursor: pointer;" [src]="LogisticsURL" alt=""  (load)="logisticsPhoto.classList.remove('bg-color2')">
+                                <div [ngStyle]="{'font-size': imgTextSize }" (click)="link('https://hbr.org/1977/11/logistics-essential-to-strategy');" id="lPText" class="userSelectDisabled" (mouseenter)="onMouseEnter('lP')" (mouseleave)="onMouseLeave('lP')" style="position: absolute; bottom: 0; left: 0; padding: 2px; color: black; background-color: rgba(240, 248, 255, 0.659); margin-bottom: 10px; margin-left: 10px; border-radius: 10px;cursor: pointer; max-width: 75%; text-align: left;">Logistics—Essential to Strategy</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="section2" style="display: flex; flex-direction: column; flex: 1; align-items: center; justify-content: center; flex: 1;">
+                        <div *ngIf="windowHeight > 725"  class="block1"  style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center; flex: 1; width: 100%;">
+                            <div [ngStyle]="{'border-bottom-right-radius': windowWidth > 450 ? '0px' : '10px'}" style="position: relative; width: 100%; height: 100%;  border-top-right-radius: 10px; overflow: hidden; ">
+                                <img (click)="link('https://www.cybersecuritycloudexpo.com/northamerica/register-2023/');" id="newYorkPhoto" #newYorkPhoto class="bg-color2 newYorkPhoto userSelectDisabled" style="width: 100%; height: 100%; margin: 0 auto; object-fit: cover; cursor: pointer;" [src]="NewYorkURL" alt=""  (load)="newYorkPhoto.classList.remove('bg-color2')">
+                                <div [ngStyle]="{'font-size': imgTextSize }" (click)="link('https://www.cybersecuritycloudexpo.com/northamerica/register-2023/');" id="nPText" class="userSelectDisabled" (mouseenter)="onMouseEnter('nP')" (mouseleave)="onMouseLeave('nP')" style="position: absolute; bottom: 0; left: 0; padding: 2px; color: black; background-color: rgba(240, 248, 255, 0.659); margin-bottom: 10px; margin-left: 10px; border-radius: 10px;cursor: pointer; max-width: 75%; text-align: left;">Cyber Security & Cloud Congress 2023</div>
+                            </div>
+                        </div>
+                        <div *ngIf="windowWidth > 450 && windowHeight > 825" class="block2" style="display: flex; flex-direction: row; align-items: center; justify-content: center; flex: 1; width: 100%;">
+                            <div style="position: relative; width: 100%; height: 100%; border-bottom-right-radius: 10px; overflow: hidden;">
+                                <img (click)="link('https://knowledge.wharton.upenn.edu/podcast/knowledge-at-wharton-podcast/less-fluff-more-stuff-how-to-make-meetings-more-productive/');" id="officePhoto" #officePhoto class="bg-color2 officePhoto userSelectDisabled" style="width: 100%; height: 100%; margin: 0 auto;  object-fit: cover; cursor: pointer;" [src]="OfficeURL" alt=""  (load)="officePhoto.classList.remove('bg-color2')">
+                                <div [ngStyle]="{'font-size': imgTextSize }" (click)="link('https://knowledge.wharton.upenn.edu/podcast/knowledge-at-wharton-podcast/less-fluff-more-stuff-how-to-make-meetings-more-productive/');" id="oPText" class="userSelectDisabled"  (mouseenter)="onMouseEnter('oP')" (mouseleave)="onMouseLeave('oP')" style="position: absolute; bottom: 0; left: 0; padding: 2px; color: rgb(0, 0, 0); background-color: rgba(240, 248, 255, 0.659); margin-bottom: 10px; margin-left: 10px; border-radius: 10px;cursor: pointer; max-width: 75%; text-align: left;">Science of Productive Meetings</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!--          -->
+            <!--  FOOTER  -->
+            <!--          -->
+
+                <div class="footer_p2" style="display: flex; flex-direction: row; margin-top: auto; margin-bottom: 5px;  align-items: center; justify-content: center;">
+                        <div style="display: flex; flex-direction: column; width: 100%;  align-items: center; justify-content: center;">
+                            <div style="display: flex; flex-direction: row; width: 100%; align-items: center; justify-content: center; ">
+                                <div (click)="startEmail('team@otizconsulting.com');" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <div class="circle" style="display: flex; flex-direction: row; "></div>
+                                </div>
+                                <span (click)="startEmail('team@otizconsulting.com');" style="cursor: pointer; font-size: 18px; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: 500; margin-top: -5px;">team@otizconsulting.com</span>
+                            </div>
+                        </div>
+                </div>
+
+        </div>
+
+       
+    </div>
+
+    <div #page3 id="page3" class="page3" [ngStyle]="{'height.px': windowHeight }" style="background-color: rgb(246, 255, 236); display: flex; flex-direction: row; align-items: start;">
+        <div #wrapper class="wrapper" [ngStyle]="{'height.px': windowHeight, 'width': pageWidth }" style="margin: 0 auto; display: flex; flex-direction: column;">
+
+            <!--         -->
+            <!-- HEADING -->
+            <!--         -->
+                <div #heading class="heading" style=" width: 100%; margin: 0 auto; position: relative; margin-top: 10px; overflow: hidden;  display: flex; flex-direction: row; justify-content: center; align-items: center; ">    
+    
+                    <img id="nELogo" #nELogo class="bg-color3 nELogo userSelectDisabled" style="width: 48px; height: 48px; margin: 0 10px;  object-fit: contain; cursor: pointer; " [src]="nELogoURL" alt=""  (load)="nELogo.classList.remove('bg-color3')">
+                    <span style="text-align: center; font-size: 34px;">Nice Eats</span>
+                </div>
+                
+            <!--         -->
+            <!--  ROW 1  -->
+            <!--         -->
+                
+                <div class="row1_p3" #scrollArea (scroll)="scrollHandlerPage3($event)">
+                    <div #scrollEl style="display: flex; flex-direction: column; width: 100%; scroll-snap-align: center; flex: none; height: 100%;">
+                        <div style="display: flex; flex-direction: row; flex: 1; width: 100%; min-height: 40px; max-height: 60px; align-items: center; justify-content: center;">
+                            <img id="deliveryLogo" #deliveryLogo class="bg-color3 deliveryLogo userSelectDisabled" style="height: 100%; margin: 0 10px;  object-fit: contain; cursor: pointer;" [src]="deliveryLogoURL" alt=""  (load)="deliveryLogo.classList.remove('bg-color3')">
+                            <div [ngStyle]="{ 'font-size': fontSizepage3Heading }" style="display: flex;">
+                                Fast delivery <span *ngIf="windowWidth > 800 && windowHeight > 600">&nbsp;to your door within 24 hours</span>
+                            </div>
+                        </div>
+                        <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'column' : 'row'}" style="display: flex; flex: 5; width: 100%;">
+                            <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'row' : 'column'}" style="display: flex; flex: 1; width: 100%; align-items: center; justify-content: center; ">
+                                <img (click)="link('https://www.factor75.com/recipes/asian-chili-shrimp-fried-rice-w19-64307539a94b18bb5a05ae85');" id="Acs" #Acs class="bg-color3 Acs userSelectDisabled" style="height: 100%; margin: 0 10px;  object-fit: contain; cursor: pointer; width: 100%;" [src]="AcsURL" alt=""  (load)="Acs.classList.remove('bg-color3')">
+                            </div>
+                            <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'row' : 'column', 'font-size': fontSizepage3 }" style="display: flex; flex: 1; width: 100%; padding: 10px; overflow: hidden;">
+                                <div style="display: flex; flex-direction: column; width: 100%;">
+                                    <h1 [ngStyle]="{ 'font-size': fontSizepage3 }" >Asian Chili Shrimp & Fried Rice</h1>
+                                    <h2  *ngIf="windowHeight > 375"  [ngStyle]="{ 'font-size': fontSizepage3 }" style="color: black; float: left; text-align: left;">with Sesame Broccoli</h2>
+                                    <p style="overflow: hidden; width: 100%;">This meal is like Chinese takeout, but better! <span *ngIf="windowWidth > 400 && windowHeight > 600">For dinner tonight, a bed of fried brown rice with <span *ngIf="windowWidth > 500 && windowHeight > 500">ginger, carrots, red peppers, corn, and scallions is topped with </span>spicy chili garlic shrimp<span *ngIf="windowWidth > 1000 && windowHeight > 800"> seasoned with tamari and rice vinegar for a little tang</span>. </span><span *ngIf="windowWidth > 1000 && windowHeight > 800">The shrimp are garnished with toasted cashews, scallions, and cilantro. Broccoli enhanced with sesame oil and sesame seeds is the perfect complement, and a side of Sriracha-style sauce amps up the flavor even more.</span></p>
+                                    <span *ngIf="windowHeight > 375" style="font-weight: 600; margin-top: 5px; overflow: hidden;">Nutrition:</span>
+                                    <ul  *ngIf="windowHeight > 375" style="color: black; overflow: hidden;">
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 600" style="overflow: hidden;">Fat 26g</li>
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 590" style="overflow: hidden;">Sugar 7g</li>
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 580" style="overflow: hidden;">Protein 30g</li>
+                                        <li  *ngIf="windowHeight > 375" style="overflow: hidden;">Calories 510kcal</li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div #scrollEl2 style="display: flex; flex-direction: column; width: 100%; scroll-snap-align: center; flex: none; height: 100%;">
+                        <div style="display: flex; flex-direction: row; flex: 2; width: 100%; min-height: 40px; max-height: 70px; align-items: center; justify-content: center;">
+                            <img id="menuLogo" #menuLogo class="bg-color3 menuLogo userSelectDisabled" style="height: 50%; margin: 0 10px;  object-fit: contain; cursor: pointer;" [src]="menuLogoURL" alt=""  (load)="menuLogo.classList.remove('bg-color3')">
+                            <div [ngStyle]="{ 'font-size': fontSizepage3Heading }" style="display: flex;">
+                                Big menu <span *ngIf="windowWidth > 800 && windowHeight > 600">&nbsp;that covers all taste buds</span>
+                            </div>
+                        </div>
+                        <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'column' : 'row'}" style="display: flex; flex: 5; width: 100%;">
+                            <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'row' : 'column'}" style="display: flex; flex: 1; width: 100%; align-items: center; justify-content: center;">
+                                <img (click)="link('https://www.factor75.com/recipes/roasted-garlic-chicken-w19-64305b3b60b3b435fc0e7209');" id="Rgc" #Rgc class="bg-color3 Rgc userSelectDisabled" style="height: 100%; margin: 0 10px;  object-fit: contain; cursor: pointer; width: 100%;" [src]="RgcURL" alt=""  (load)="Rgc.classList.remove('bg-color3')">
+                            </div>
+                            <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'row' : 'column', 'font-size': fontSizepage3}" style="display: flex; flex: 1; width: 100%; padding: 10px; overflow: hidden;">
+                                <div style="display: flex; flex-direction: column; width: 100%;">
+                                    <h1 [ngStyle]="{ 'font-size': fontSizepage3 }" >Roasted Garlic Chicken</h1>
+                                    <h2  *ngIf="windowHeight > 375"  [ngStyle]="{ 'font-size': fontSizepage3 }" style="color: black; float: left; text-align: left;">with Green Beans</h2>
+                                    <p style="overflow: hidden; width: 100%;">Most flavorful grilled chicken breast on the menu. <span *ngIf="windowWidth > 400 && windowHeight > 600">We brine it beforehand with smoked black pepper <span *ngIf="windowWidth > 500 && windowHeight > 500">, toasted garlic powder, roasted garlic, and parsley.</span>Then we transform it into a rich gravy<span *ngIf="windowWidth > 1000 && windowHeight > 800"> served with Yukon Gold potatoes with sour cream and onion</span>. </span><span *ngIf="windowWidth > 1000 && windowHeight > 800">For the vegetable side, there's roasted green beans tossed with roasted garlic, olive oil, and smoked black pepper.</span></p>
+                                    <span *ngIf="windowHeight > 375" style="font-weight: 600; margin-top: 5px; overflow: hidden;">Nutrition:</span>
+                                    <ul  *ngIf="windowHeight > 375" style="color: black; overflow: hidden;">
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 600" style="overflow: hidden;">Fat 20g</li>
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 590" style="overflow: hidden;">Sugar 6g</li>
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 580" style="overflow: hidden;">Protein 41g</li>
+                                        <li  *ngIf="windowHeight > 375" style="overflow: hidden;">Calories 450kcal</li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div #scrollEl3 style="display: flex; flex-direction: column; width: 100%; scroll-snap-align: center; flex: none; height: 100%;">
+                        <div style="display: flex; flex-direction: row; flex: 2; width: 100%; min-height: 40px; max-height: 70px; align-items: center; justify-content: center;">
+                            <img id="qualityLogo" #qualityLogo class="bg-color3 qualityLogo userSelectDisabled" style="height: 100%; margin: 0 10px;  object-fit: contain; cursor: pointer;" [src]="qualityLogoURL" alt=""  (load)="qualityLogo.classList.remove('bg-color3')">
+                            <div [ngStyle]="{ 'font-size': fontSizepage3Heading }" style="display: flex;" style="display: flex;">
+                                Best quality <span *ngIf="windowWidth > 800 && windowHeight > 600">&nbsp;meals from organic food</span>
+                            </div>
+                        </div>
+                        <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'column' : 'row'}" style="display: flex; flex: 5; width: 100%;">
+                            <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'row' : 'column'}" style="display: flex; flex: 1; width: 100%; align-items: center; justify-content: center;">
+                                <img (click)="link('https://www.factor75.com/recipes/southwestern-black-bean-corn-quinoa-w19-6430826f2fe29ac212037e2a');" id="Sbb" #Sbb class="bg-color3 Sbb userSelectDisabled" style="height: 100%; margin: 0 10px;  object-fit: contain; cursor: pointer; width: 100%;" [src]="SbbURL" alt=""  (load)="Sbb.classList.remove('bg-color3')">
+                            </div>
+                            <div [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'row' : 'column', 'font-size': fontSizepage3}" style="display: flex; flex: 1; width: 100%; overflow: hidden;">
+                                <div style="display: flex; flex-direction: column; width: 100%;">
+                                    <h1 [ngStyle]="{ 'font-size': fontSizepage3 }" >Black Bean, Corn & Quinoa</h1>
+                                    <h2  *ngIf="windowHeight > 375"  [ngStyle]="{ 'font-size': fontSizepage3 }" style="color: black; float: left; text-align: left;">with Sweet Potatoes</h2>
+                                    <p style="overflow: hidden; width: 100%;">Enjoy hearty vegan fare, packed with flavors and colors. <span *ngIf="windowWidth > 400 && windowHeight > 600">We serve a hearty base of rainbow quinoa <span *ngIf="windowWidth > 500 && windowHeight > 500">, studded with poblano and red bell peppers. </span>We then top it with a flavorful mixture of black beans<span *ngIf="windowWidth > 1000 && windowHeight > 800"> tossed with corn, and bell peppers tossed in a salsa</span>. </span><span *ngIf="windowWidth > 1000 && windowHeight > 800">On the side, there’s chipotle-roasted sweet potatoes, which are sprinkled with toasted spicy pepitas and served with a vegan cilantro.</span></p>
+                                    <span *ngIf="windowHeight > 375" style="font-weight: 600; margin-top: 5px; overflow: hidden; ">Nutrition:</span>
+                                    <ul  *ngIf="windowHeight > 375" style="color: black; overflow: hidden; ">
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 600" style="overflow: hidden;">Fat 16g</li>
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 590" style="overflow: hidden;">Sugar 13g</li>
+                                        <li *ngIf="windowWidth > 700 && windowHeight > 580" style="overflow: hidden; ">Protein 13g</li>
+                                        <li  *ngIf="windowHeight > 375" style="overflow: hidden; ">Calories 440kcal</li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <!--                 -->
+            <!--  ROW 1 PEBBLES  -->
+            <!--                 -->
+            <!--                 -->
+
+                <div #row2_p3 class="row2_p3" style="display: flex; flex-direction: row; width: 20%; min-width: 150px; overflow: hidden; max-height: 35px;  min-height: 35px; flex: 1; margin: 0 auto; align-items: center; justify-content: center; min-width: 175px; margin-bottom: 10px;">
+                        <div (click)="scrollPage3(1)" #clickArea style="display: flex; flex-direction: column; width: 100%; align-items: center; justify-content: center; cursor: pointer; flex: 1; height: 100%;">
+                            <div id="p3SB1" class="p3SB" [class.activeP3]="activePage3 === 1" style="height: 20px; width: 20px; appearance: none; border-radius: 50%;"></div>
+                        </div>
+                        <div (click)="scrollPage3(2)" #clickArea2 style="display: flex; flex-direction: column; width: 100%;  align-items: center; justify-content: center;cursor: pointer;  flex: 1;height: 100%;">
+                            <div id="p3SB2" class="p3SB" [class.activeP3]="activePage3 === 2" style="height: 20px; width: 20px; appearance: none; border-radius: 50%;"></div>
+                        </div>
+                        <div (click)="scrollPage3(3)" #clickArea3 style="display: flex; flex-direction: column; width: 100%;  align-items: center; justify-content: center;cursor: pointer;  flex: 1;height: 100%;">
+                            <div id="p3SB3" class="p3SB" [class.activeP3]="activePage3 === 3" style="height: 20px; width: 20px; appearance: none; border-radius: 50%;"></div>
+                        </div>
+                </div>
+            
+
+            <!--          -->
+            <!--  FOOTER  -->
+            <!--          -->
+
+                <div class="footer_p3" style="display: flex; flex-direction: row; margin-top: auto; margin-bottom: 10px;  align-items: center; justify-content: center; flex: 1; min-height: 55px;">
+                    <div style="display: flex; flex-direction: column; width: 100%;  align-items: center; justify-content: center; flex: 3">
+                        <div style="display: flex; flex-direction: row; width: 100%; align-items: center; justify-content: center; height: 100%; ">
+                            <img id="location" #location class="bg-color3 location userSelectDisabled" style="height: 100%; object-fit: contain; cursor: pointer; width: 40px; height: 40px; float: right;" [src]="LocationURL" alt=""  (load)="location.classList.remove('bg-color3')">
+                            <table style="cursor: pointer; font-size: 18px; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: 500;">
+                                <tr >
+                                    <td style="display: flex; align-items: center; justify-content: center;">Brooklyn, NY 14454</td>
+                                </tr>
+                                <tr>
+                                    <td (click)="startCall('161-256-2566')" style="display: flex; align-items: center; justify-content: center;">(161) 256 2566</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        
+        </div>
+    </div>
+    
+    <div #page4 id="page4" class="page4" [ngStyle]="{'height.px': windowHeight }" style="background-color: rgba(237, 219, 255, 0.9); ">
+       
+        <div #wrapper class="wrapper" [ngStyle]="{'height.px': windowHeight, 'width': pageWidth }" style="margin: 0 auto; display: flex; flex-direction: column; position: relative; align-items: center; justify-content: center;">
+
+            <!--         -->
+            <!-- HEADING -->
+            <!--         -->
+
+                <div #heading class="heading" style=" width: 100%; margin: 0 auto; position: relative; margin-top: 10px; overflow: hidden;  display: flex; flex-direction: row; justify-content: start; align-items: start; ">    
+                    <div style="width: 65px;  float: right; align-items: start; display: flex; justify-content: start; flex-direction: column; flex: 10;">
+                        <div style="display: flex; flex-direction: row;">
+                            <span [ngStyle]="{'font-size': fontSizepage4Heading}" style="text-align: left; cursor:default; user-select: none; -webkit-user-select: none; -moz-user-select: none;">EasyWorkout</span>
+                            <img id="dumbbell" #dumbbell class="bg-color4 dumbbell userSelectDisabled" style="width: 43px; height: 43px; margin: 0 10px;  object-fit: contain; padding-top: 3px;" [src]="DumbbellURL" alt=""  (load)="dumbbell.classList.remove('bg-color4')">        
+                        </div>
+                    </div>
+                    <div style="min-width: 65px;  float: right; align-items: end; display: flex; justify-content: end;flex-direction: column; flex: 1;">
+                        <img (click)="link('https://www.instagram.com/pulsefitnesstraining/')" id="insta" #insta class="bg-color4 insta userSelectDisabled" style="width: 43px; height: 43px; object-fit: contain; cursor: pointer; " [src]="InstaURL" alt=""  (load)="insta.classList.remove('bg-color4')">
+                    </div>
+                </div>
+
+            <!--         -->
+            <!--  ROW 1  -->
+            <!--         -->
+                
+                <div class="row1_p4" style="display: flex; flex-direction: row; margin-bottom: 5px; width: 100%; margin-top: 10px; flex-wrap: wrap; overflow: hidden; min-height: 50px;   background: linear-gradient(to right, transparent 0%, rgba(199, 66, 199, 0.103) 100%);">
+                    <div class="section1" style="color: rgb(0, 0, 0); text-align: left; display: flex; flex-direction: column; padding-top: 5px;">
+                        <ul [ngStyle]="{'font-size': fontSizepage4Row1}" style="padding: 0;">
+                            <li *ngIf="windowHeight>400">
+                                First Workout Free
+                            </li>
+                            <li *ngIf="windowHeight>400">
+                                100+ Instructors Available
+                            </li>
+                            <li>
+                                Enjoy World-Class Exercises
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+
+            <!--         -->
+            <!--  ROW 2  -->
+            <!--         -->
+                
+                <div class="row2_p4" [ngStyle]="{'flex-direction': (windowHeight/windowWidth) > 1 ? 'column' : 'row'}" style="display: flex; width: 100%; margin-top: 10px; flex-wrap: wrap; overflow: hidden; min-height: 50px; flex: 6;" >
+                    <div class="row2_p4" style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; overflow: hidden; min-height: 50px; flex: 1; height: 100%; ">
+                        <img (click)="link('https://pulsefitnesstraining.com')" id="gw" #gw class="bg-color4 gw userSelectDisabled" style="object-fit: cover; cursor: pointer; width: 100%; " [src]="GwURL" alt=""  (load)="gw.classList.remove('bg-color4')">
+                    </div>
+                    <div class="row3_p4" class="bg-color4"  style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; overflow: hidden; min-height: 50px; flex: 1; height: 100%; ">
+                        <iframe loading="lazy" (load)="iframe.style.visibility='visible';" class="bg-color4" #iframe src="https://www.youtube.com/embed/0qHTb1BWJFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="max-width: 100%; width: 100%; height: auto; visibility:hidden;" ></iframe>
+                    </div>
+                </div>
+                
+            <!--          -->
+            <!--  FOOTER  -->
+            <!--          -->
+  
+                <div  class="footer_p4" style="display: flex; flex-direction: row; margin-top: auto; margin-bottom: 10px;  align-items: center; justify-content: center; flex: 1; min-height: 55px; flex: 1; position: relative;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; flex-direction: row; flex: 10;">
+                            <input #email [ngStyle]="{'font-size': fontSizepage4Footer, 'border': emailError ? '1px solid red' : emailSaved ? '1px solid blue' : '0px'}"  type="email"  [placeholder]="emailPlaceholderText" name="email" required style="height: 35px; border: 1px solid rgba(128, 128, 128, 0.56); border-radius: 1px;" (input)="email.value = email.value; checkEmail(email.value);">
+                            <button class="signUp" (click)="saveEmail(email.value.toLowerCase())" [ngStyle]="{'font-size': fontSizepage4Footer, 'background-color': email.value != '' ? 'rgba(179, 179, 255, 0.722)' : 'rgba(179, 179, 255, 0.3)'}"  style="height: 35px; margin-left: 10px; border-radius: 1px; color: black; border: 1px solid rgba(0, 19, 128, 0.348); font-weight: bold;">Sign Up</button>    
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+    <div class="bubble-wrap" #bubbleWrap style="overflow-x: hidden;" >
+        <button style="overflow: hidden;" #bubble1 (click)="scrollPage(1);"><div class="bubble" id="bubOne" [class.bubOne]="activePage === 1"></div></button>
+        <button style="overflow: hidden;" #bubble2 (click)="scrollPage(2);"><div class="bubble" id="bubTwo" [class.bubTwo]="activePage === 2"></div></button>
+        <button style="overflow: hidden;" #bubble3 (click)="scrollPage(3);"><div class="bubble" id="bubThree" [class.bubThree]="activePage === 3"></div></button>
+        <button style="overflow: hidden;" #bubble4 (click)="scrollPage(4);"><div class="bubble" id="bubFour" [class.bubFour]="activePage === 4"></div></button>
+    </div>
+
+</div>

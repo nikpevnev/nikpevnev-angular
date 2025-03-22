@@ -1,0 +1,25 @@
+<div id="list" [ngStyle]="{'height.px': windowHeight }" #list style="width: 100%;">
+    <app-top></app-top>
+    <div style="width: 90%; border: 1px solid red; margin: 0 auto; color: black;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        <div style="display: flex; flex-direction: row;  height: 25px; margin-bottom: 15px; font-weight: bold;">
+            Found 4 results
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap;">
+            <div style="flex: 0 1 calc(50% - 10px); min-width: 300px; max-width: calc(50% - 10px); height: 300px;">
+                Item 1
+            </div>
+            <div [routerLink]="['../product']" style="flex: 0 1 calc(50% - 10px); min-width: 300px; max-width: calc(50% - 10px); height: 300px;">
+                Item 2
+            </div>
+            <div style="flex: 0 1 calc(50% - 10px); min-width: 300px; max-width: calc(50% - 10px); height: 300px;">
+                Item 3
+            </div>
+            <div style="flex: 0 1 calc(50% - 10px); min-width: 300px; max-width: calc(50% - 10px); height: 300px;">
+                Item 4
+            </div> 
+        </div>
+    
+    </div>
+
+</div>

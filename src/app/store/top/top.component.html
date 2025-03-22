@@ -1,0 +1,136 @@
+<div id="mySidenav" [ngStyle]="{'height.px': windowHeight }" class="sidenav">
+    <div>Welcome
+    </div>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+<div (click)="closeNav()" [ngStyle]="{'height.px': windowHeight }" id="mySidenavBack" class="sidenavBack">
+    <a class="closebtn">&times;</a>
+</div>
+
+<ng-template #formTemplate>
+    <form [formGroup]="searchForm"  #searchFormRef style="width: 100%; margin: 0 auto; font-size: 20px; padding: 0;" >  
+        <div id="searchGroup" #searchGroup style="position: relative; display: flex; align-items: center; justify-content: center; flex-direction: row; height: 35px;  border: 3px solid rgb(1, 1, 141); border-radius: 8px; width: 100%;">
+            <input matInput #searchInputI type="text" id="searchIn" [(ngModel)]="value" placeholder="Search" style="width: 100%; height: 100%; font-size: large; background-color: rgb(255, 255, 255); color: black; border: none; border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding-top: 0; padding-bottom: 0; margin: 0; padding-left: 5px; -webkit-tap-highlight-color: transparent; outline: none; padding-right: 35px;" formControlName="searchInput" (focus)="changeColor('f');" (blur)="changeColor('b');">
+            <button *ngIf="value" style="background-color: white; color: black; position: absolute; right: 0; top: 50%; transform: translateY(-50%); margin-right: 45px; padding-left: 5px; padding-right: 8px; font-size: 18px; border: 1px solid red; -webkit-tap-highlight-color: transparent; border: none; cursor: pointer;"
+                (click)="value=''; searchInputI.blur(); searchInputI.focus();">
+                &times;
+            </button>
+            <div #searchArea style="display: flex; height: 100%; min-width: 35px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; margin-left: -5px; background-color: orange; justify-content: center; align-items: center; padding-left: 5px;">
+                <img id="search" #cart style="height: 80%; object-fit: contain; cursor: pointer; margin: 0 auto;" [src]="searchURL" alt="">
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<!--         -->
+<!-- HEADING -->
+<!--         -->
+
+<div id="top" #top style="display: flex; flex-direction: row; height: 65px; flex: 1; align-items: center;" (click)="blurInput()">
+
+    <div (click)="openNav();" style="display: flex; flex-direction: column; width: 50px; height: 40px; margin-top: 4px; margin-left: 5px; cursor: pointer;">
+        <div style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center;">
+            <div style="width: 90%; border-radius: 5px; height: 40%; background-color: white;"></div>
+        </div>
+        <div style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center;">
+            <div style="width: 90%; border-radius: 5px; height: 40%; background-color: white;"></div>
+        </div>
+        <div style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center;">
+            <div style="width: 90%; border-radius: 5px; height: 40%; background-color: white;"></div>
+        </div>
+    </div>
+
+
+    <div style="display: flex; flex-direction: column; width: 200px; cursor: pointer; align-items: start;">
+        <div #logoArea routerLink="/store" style="display: flex; flex-direction: row; max-height: 55px; flex: 1; height: 55px; width: 100px; min-width: 100px; max-width: 150px; align-items: start; justify-content: start; border-radius: 5px; flex: 1; align-items: start; margin-left: 10px;">
+            <img id="logo" #logo style="width: 100%; object-fit: contain; cursor: pointer; align-items: start; justify-content: start;" [src]="logoURL" alt="">
+        </div>
+    </div>
+
+    <div  style="display: flex; flex-direction: column; width: 100%;  cursor: pointer; align-items: start; flex: 1; align-items: center;">
+        <div *ngIf="windowWidth > 1000" id="topBar" style="min-width: 200px; width: 100%; max-width: 400px;">
+            <!-- INSERT A FORM -->
+            <ng-container *ngTemplateOutlet="formTemplate"></ng-container>
+        </div>
+    </div>
+
+
+    <div style="display: flex; flex-direction: column; width: 200px; cursor: pointer; align-items: end; margin-right: 15px; justify-content: center;">
+        <div style="display: flex; flex-direction: row;">
+            <div #cartArea style="display: flex; flex-direction: column; max-height: 48px; flex: 1; height: 48px; min-width: 48px; align-items: center; justify-content: center; border-radius: 5px; align-items: end; ">
+                <img id="cart" #cart style="height: 100%; margin: 0 10px;  object-fit: contain; cursor: pointer; " [src]="cartURL" alt="">
+            </div>
+            <div style="display: flex; flex-direction: column;  align-items: center; justify-content: center;">
+                <span style="background-color: grey; padding-left: 7px; padding-right: 7px; padding-top: 2px;  padding-bottom: 2px; border-radius: 10px; font-size: 22px;">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--               -->
+<!-- SEARCH POP UP -->
+<!--               -->
+
+<div *ngIf="windowWidth <= 1000" #searchBar style="display: flex; flex-direction: row; height: 65px; flex: 1; align-items: center; background-color: rgb(29, 52, 144); width: 100%;">
+    <div style="display: flex; flex-direction: column; width: 100%; cursor: pointer; align-items: start; flex: 1; align-items: center;">
+        <div id="popupBar" #barArea style="width: 95%;">
+            <!-- INSERT A FORM -->
+            <ng-container *ngTemplateOutlet="formTemplate"></ng-container>
+        </div>
+    </div>
+</div>
+
+
+<!--         -->
+<!-- FILTERS -->
+<!--         -->
+
+<div *ngIf="false" #filterBar style="display: flex; flex-direction: row; height: 85px; flex: 1; align-items: center; background-color: rgb(228, 241, 255); width: 100%; color: black; font-size: 22px;">
+    <div  style="display: flex; flex-direction: column; height: 100%; width: 97%; align-items: start; justify-content: center;  margin-left: 5px; margin-top: 8px;">
+        <div  style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center; width: 100%;">
+            <div style="display: flex; flex-direction: column;">
+                <span class="tag" style="padding: 3px; border-radius: 3px;  padding-left: 8px; padding-right: 8px; cursor: pointer;">Category</span>
+            </div>
+            <div class="scrollArea" style="overflow-x: scroll; scroll-snap-type: x mandatory; width: 100%; display: flex; flex-direction: row;">
+                <div class="tagArea" style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">All</span>
+                </div>
+                <div class="tagArea" style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">Website set up</span>
+                </div>
+                <div class="tagArea" style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">Website build</span>
+                </div>
+                <div class="tagArea" style="display: flex; flex-direction: column; ">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">Design solutions</span>
+                </div>
+                <div class="tagArea" style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">Tech consultation</span>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row; flex: 1; align-items: center; justify-content: center; width: 100%;">
+            <div style="display: flex; flex-direction: column;">
+                <span class="tag" style="padding: 3px; border-radius: 3px; padding-left: 8px; padding-right: 8px; cursor: pointer;">Price</span>
+            </div>
+            <div class="scrollArea" style="overflow-x: scroll; scroll-snap-type: x mandatory; width: 100%; display: flex; flex-direction: row; ">
+                <div class="tagArea"  style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">All</span>
+                </div>
+                <div class="tagArea"  style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">$19-$99</span>
+                </div>
+                <div class="tagArea"  style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">$99-$399</span>
+                </div>
+                <div class="tagArea"  style="display: flex; flex-direction: column;">
+                    <span class="tag" style="background-color: rgb(247, 247, 247); padding: 3px; border-radius: 10px; margin-left: 10px; border: 2px solid rgb(235, 235, 235);  padding-left: 8px; padding-right: 8px; cursor: pointer;">$399-above</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
